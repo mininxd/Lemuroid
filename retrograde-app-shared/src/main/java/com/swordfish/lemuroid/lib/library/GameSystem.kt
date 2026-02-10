@@ -38,6 +38,7 @@ data class GameSystem(
     val hasMultiDiskSupport: Boolean = false,
     val fastForwardSupport: Boolean = true,
     val hasTouchScreen: Boolean = false,
+    val cheatsSupported: Boolean = false,
 ) {
     companion object {
         private val SYSTEMS =
@@ -634,6 +635,7 @@ data class GameSystem(
                         ),
                     ),
                     uniqueExtensions = listOf("gba"),
+                    cheatsSupported = true,
                 ),
                 GameSystem(
                     SystemID.N64,

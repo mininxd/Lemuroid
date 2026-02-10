@@ -126,6 +126,12 @@
     <string name="game_menu_change_disk_disk">Disk %1$s</string>
     <string name="game_menu_tilt_sensor">Tilt Sensor</string>
 
+    <string name="game_menu_cheats">Cheats</string>
+    <string name="game_menu_cheats_add">Add Cheat</string>
+    <string name="game_menu_cheats_name">Cheat Name</string>
+    <string name="game_menu_cheats_code">Cheat Code</string>
+    <string name="game_menu_cheats_enabled">Enabled</string>
+
     <string name="game_loading_preparing_game">Preparing game…</string>
 
     <string name="game_toast_settings_button_using_gamepad">Gamepad detected. Access settings menu with %1$s.</string>
