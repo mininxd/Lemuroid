@@ -42,6 +42,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.swordfish.lemuroid.R
+import com.swordfish.lemuroid.app.mobile.feature.gamemenu.cheats.GameCheatsScreen
+import com.swordfish.lemuroid.app.mobile.feature.gamemenu.cheats.GameCheatsViewModel
 import com.swordfish.lemuroid.app.mobile.feature.gamemenu.coreoptions.GameMenuCoreOptionsScreen
 import com.swordfish.lemuroid.app.mobile.feature.gamemenu.coreoptions.GameMenuCoreOptionsViewModel
 import com.swordfish.lemuroid.app.mobile.feature.gamemenu.states.GameMenuStatesScreen
@@ -224,6 +226,20 @@ class GameMenuActivity : RetrogradeComponentActivity() {
                                 factory = GameMenuCoreOptionsViewModel.Factory(inputDeviceManager),
                             ),
                             gameMenuRequest,
+                        )
+                    }
+                    composable(GameMenuRoute.CHEATS) {
+                        GameCheatsScreen(
+                            viewModel(
+                                factory =
+                                    GameCheatsViewModel.Factory(
+                                        application,
+                                        gameMenuRequest,
+                                    ),
+                            ),
+                            onCheatsUpdated = {
+                                onResult { putExtra(GameMenuContract.RESULT_CHEATS_UPDATED, true) }
+                            },
                         )
                     }
                 }
